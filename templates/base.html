@@ -1,18 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
     <head>
-        <title>Build-A-Blog</title>
+        <title>{{title}}</title>
     </head>
-    <body>
-        <h1>Build-A-Blog</h1>
-        <form method="get" action="/blog">
-        <input type="submit" value="View Blog">
-        </form>
-        <form method="get" action="/newpost">
-        <input type="submit" value="New Post">
-        </form>
-        {% block content %}
-        {% endblock %}
-        </form>
-    </body>
+<body>
+
+    <div>
+        <a href="/blog">Blog</a> |
+        <a href="/newpost">Add Post</a> 
+    </div>
+        
+    {% block content %}
+    {% endblock %}
+
+</body>
 </html>

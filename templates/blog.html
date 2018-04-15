@@ -1,17 +1,21 @@
 {% extends "base.html" %}
+
 {% block content %}
-<h1>Vince's Blog Posts</h1>
-<div class = "post">
-{% if onePost ==True %}
-    {% for post in posts %}
-        <div class ="post-title">{{entry.title}}</div>
-        <pre class = "post-body">{{entry.body}}</pre>
+
+    <h1 style= 'text-align: center'>Build-a-Blog</h1>
+
+    {% if blogs|length == 0 %}
+    <p>No blogs yet</p>
+    {% else %}
+
+        {% for blog in blogs %}
+        <div>
+            <a class="title" style='color:black; font-size:25px; text-decoration:none;' href='/blog?id={{blog.id}}'><b>{{blog.title}}</b></a>
+            <p>{{blog.body}}</p>
+        </div>
+        <hr />
         {% endfor %}
-{% else %}
-    {% for post in posts %}
-        <div class ="post-title"><a href="/blog/{{post.key().id()}}">{{post.title}}</a></div>
-        <pre class = "post-body">{{post.body}}</pre>
-    {% endfor %}
-{% endif %}
-<div class = "post">
+    
+    {% endif %}
+
 {% endblock %}
