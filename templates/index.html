@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 style="text-align: left">Blogzers!</h1>
+    
+    {% if owners|length == 0 %}
+    <p>No blog posts yet</p>
+    {% else %}
+
+        {% for owner in owners %}
+        <a href="blog?user={{owner.username}}"><h3>{{owner.username}}</h3>            
+        {% endfor %}
+
+    {% endif %}
+
+{% endblock %}
