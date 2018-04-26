@@ -1,6 +1,11 @@
-<!doctype html>
-<html>
+<!DOCTYPE html5>
+<html lang="eng" >
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>{{title}}</title>
         <style>
             .error{
@@ -9,11 +14,22 @@
         </style>
     </head>
 <body>
-    <a href="/">Home</a>
-    <a href="blog">Blog</a> 
-    <a href="newpost">New Post</a>
-    <a href="login">Login</a> 
-    <a href="logout">Logout</a>
+        <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Blogz</a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="newpost">New Post</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                    <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                  </ul>
+                </div>
+              </nav>
 </body>
     {% with messages = get_flashed_messages(with_categories=True) %}
             <ul>
